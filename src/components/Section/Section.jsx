@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import s from './Section.module.scss'
 
 export class Section extends Component {
   static propTypes = {
@@ -13,10 +14,12 @@ export class Section extends Component {
   render() {
     const { title, children } = this.props;
     return (
-      <div>
-        <h2>{title}</h2>
-        {children}
-      </div>
+      <section>
+        <div className={s.container}>
+          {title && <h2>{title}</h2>}
+          {children}
+        </div >
+      </section>
     )
   }
 }

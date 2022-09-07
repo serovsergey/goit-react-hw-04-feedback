@@ -9,13 +9,10 @@ const POSITIVE_PROPERTY = 'good';
 // тоді можна легко додати/прибрати опції для оцінок просто у початковий стейт,
 // правда тоді ще прийдеться переробити логіку підрахунку відсотку позитивних фідбеків...
 export class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      good: 0,
-      neutral: 0,
-      bad: 0,
-    }
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
   }
 
   onLeaveFeedback = evt => {
@@ -30,7 +27,7 @@ export class App extends Component {
     const positivePercentage = Math.round(this.state[POSITIVE_PROPERTY] / total * 100);
 
     return (
-      <>
+      <main>
         <Section title="Please Leave Feedback" >
           <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.onLeaveFeedback} />
         </Section>
@@ -40,7 +37,7 @@ export class App extends Component {
             : <Notification message="There is no feedback" />
           }
         </Section>
-      </>
+      </main>
     )
   };
 };

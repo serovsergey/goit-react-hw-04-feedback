@@ -11,7 +11,6 @@ export class FeedbackOptions extends Component {
   render() {
     const { options, onLeaveFeedback } = this.props;
     return (
-
       <>
         <div className={s.list}>
           {options.map(button => (
