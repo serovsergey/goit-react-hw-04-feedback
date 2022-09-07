@@ -1,0 +1,14 @@
+.list {
+  // display: flex;
+}
+
+.button {
+  display: inline-block;
+  height: 2em;
+  min-width: 100px;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
