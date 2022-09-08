@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import s from './Statistics.module.scss'
 
 export class Statistics extends Component {
   static propTypes = {
@@ -14,8 +15,8 @@ export class Statistics extends Component {
         {Object.entries(options).map(([option, count]) => (
           <p key={option}>{option[0].toUpperCase() + option.slice(1)}: {count}</p>
         ))}
-        <p>Total: {total}</p>
-        <p>Positive Feedback: {positivePercentage}%</p>
+        <p className={s.totals}>Total: {total}</p>
+        <p className={s.totals}>Positive Feedback: {positivePercentage}%</p>
       </>
     )
   }
