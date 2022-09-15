@@ -35,7 +35,7 @@ export function App() {
       <Section title="Statistics">
         {total
           ? <Statistics {...feedbacks} total={total} positivePercentage={positivePercentage} />
-          : <Notification message="There is no feedback" />
+          : <Notification message="There is no feedback yet" />
         }
       </Section>
     </main>
