@@ -13,7 +13,7 @@ const initialFeedbacks = {
 }
 
 const feedbackReducer = (state, action) => {
-  return { ...state, [action.payload]: state[action.payload] + 1 }
+  return { ...state, [action.type]: state[action.type] + 1 }
 }
 
 export function App() {
@@ -21,7 +21,7 @@ export function App() {
 
   const handleLeaveFeedback = evt => {
     const option = evt.currentTarget.name;
-    dispatch({ payload: option })
+    dispatch({ type: option })
   }
 
   const total = Object.values(feedbacks).reduce((acc, value) => acc + value, 0);
